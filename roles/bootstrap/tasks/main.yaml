@@ -19,7 +19,7 @@
 
 - name: Bootstrap | Install Terraform Cloud Agent
   ansible.builtin.unarchive:
-    dest: /usr/local/bin/tfc-agent
+    dest: /usr/local/bin
     remote_src: true
     src: https://releases.hashicorp.com/tfc-agent/1.13.1/tfc-agent_1.13.1_linux_amd64.zip
     # creates: /usr/local/bin/tfc-agent
