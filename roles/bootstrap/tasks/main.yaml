@@ -22,7 +22,6 @@
     dest: /usr/local/bin
     remote_src: true
     src: https://releases.hashicorp.com/tfc-agent/1.13.1/tfc-agent_1.13.1_linux_amd64.zip
-    creates: /usr/local/bin/tfc-agent
     mode: "755"
 
 - name: Bootstrap | Install Terraform Cloud Agent Core Service
