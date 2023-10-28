@@ -1,0 +1,3 @@
+---
+tfc_agent_token: "{{ tfc_agent_token | default('') }}"
+tfc_agent_name: "{{ tfc_agent_name | default('maas') }}"

@@ -1,59 +1,27 @@
 {
   "ansible.lightspeed.enabled": false,
   "ansible.validation.lint.arguments": "-c .ansible-lint",
-  "files.associations":
-    {
-      "*.json5": "jsonc",
-      "**/inventory/**/*.yaml": "ansible",
-      "**/roles/**/*.yaml": "ansible",
-      "**/terraform/**/*.tf": "terraform",
-      "**/kubernetes/**/*.sops.toml": "plaintext",
-      "site.yaml": "ansible",
-      "**/*.yml": "yaml",
+  "[ansible]": {
+    "editor.detectIndentation": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.quickSuggestions": {
+      "comments": true,
+      "other": true,
+      "strings": true
     },
-  "vsicons.associations.folders":
-    [
-      {"icon": "src", "extensions": ["roles"], "format": "svg", "light": true},
-      {
-        "icon": "json",
-        "extensions": ["inventory"],
-        "format": "svg",
-        "light": true,
-      },
-    ],
-  "material-icon-theme.folders.associations":
-    {
-      ".taskfiles": "utils",
-      "roles": "import",
-      "charts": "kubernetes",
-      "hack": "scripts",
-      "repositories": "database",
-      "terraforms": "terraform",
-      "vars": "other",
-      "cert-manager": "guard",
-      "external-secrets": "keys",
-      "kube-system": "kubernetes",
-      "monitoring": "event",
-      "networking": "connection",
-      "rook-ceph": "dump",
-    },
-  "[ansible]":
-    {
-      "editor.detectIndentation": true,
-      "editor.insertSpaces": true,
-      "editor.tabSize": 2,
-      "editor.quickSuggestions":
-        {"comments": true, "other": true, "strings": true},
-      "editor.autoIndent": "advanced",
-    },
-  "yaml.schemaStore.enable": true,
-  "yaml.schemas":
+    "editor.autoIndent": "advanced"
+  },
+  "json.schemas": [
     {
       "ansible": "ansible/**/*.yaml",
       "kubernetes": "kubernetes/**/*.yaml",
-      "https://taskfile.dev/schema.json":
-        ["**/Taskfile.yml", "./path/to/any/other/taskfile.yml"],
-    },
+      "https://taskfile.dev/schema.json": [
+        "**/Taskfile.yml",
+        "./path/to/any/other/taskfile.yml"
+      ]
+    }
+  ],
   "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontVariations": true,
   "editor.fontLigatures": true,
@@ -67,23 +35,17 @@
   "explorer.autoReveal": false,
   "files.trimTrailingWhitespace": true,
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns":
-    {
-      "*.ts": "${capture}.js",
-      "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
-      "*.jsx": "${capture}.js",
-      "*.tsx": "${capture}.ts",
-      "tsconfig.json": "tsconfig.*.json",
-      "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
-      "ansible.cfg": ".ansible-lint, .ansible-navigator.yml, .ansible-vault, requirements.txt, requirements.yaml, .editorconfig",
-      "main.tf": "*.tf, *.tfvars, *.tfstate, *.tfstate.backup",
-      "site.yaml": "site.yaml, debug.yaml, install.yaml, uninstall.yaml, reset.yaml",
-    },
-  "[yaml]": {"editor.defaultFormatter": "redhat.vscode-yaml"},
-  "editor.tabSize": 2,
-  "ansible.ansible.path": ".venv/bin/ansible",
-  "ansible.python.interpreterPath": ".venv/bin/python",
-  "ansible.python.activationScript": ".venv/bin/activate",
-  "ansible.validation.lint.path": ".venv/bin/ansible-lint",
-  "ansible.ansibleNavigator.path": ".venv/bin/ansible-navigator",
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml",
+    "ansible.cfg": ".ansible-lint, .ansible-navigator.yml, .ansible-vault, requirements.txt, requirements.yaml, .editorconfig",
+    "main.tf": "*.tf, *.tfvars, *.tfstate, *.tfstate.backup",
+    "site.yaml": "site.yaml, debug.yaml, install.yaml, uninstall.yaml, reset.yaml"
+  },
+  "[yaml]": { "editor.defaultFormatter": "redhat.vscode-yaml" },
+  "editor.tabSize": 2
 }

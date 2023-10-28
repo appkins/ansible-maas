@@ -1,0 +1,9 @@
+---
+# site.yml
+- name: Bootstrap MAAS
+  hosts: local
+  gather_facts: false
+  become: true
+  become_method: ansible.builtin.sudo
+  roles:
+    - bootstrap
