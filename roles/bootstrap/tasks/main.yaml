@@ -28,13 +28,13 @@
     mode: "755"
 
 - name: Bootstrap | Install Terraform Cloud Agent Core Service
-  ansible.builtin.file:
+  ansible.builtin.copy:
     dest: /etc/systemd/system/tfc-agent.service
     src: files/tfc-agent.service
     mode: "755"
 
 - name: Bootstrap | Install Terraform Cloud Agent Core Environment
-  ansible.builtin.copy:
+  ansible.builtin.template:
     dest: /etc/systemd/system/tfc-agent.service.env
     src: templates/tfc-agent.service.env.j2
     mode: "0600"
