@@ -1,6 +1,7 @@
 ---
-hosts:
-  localhost:
-    ansible_connection: local
-    ansible_become_user: root
-    ansible_become: true
+local:
+  hosts:
+    localhost:
+      ansible_connection: local
+      ansible_become_user: root
+      ansible_become: true
