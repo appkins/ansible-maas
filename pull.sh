@@ -7,3 +7,4 @@ logfile='/var/log/ansible-pull-update.log'            # where to put the logs
 
 sudo ansible-pull -o -C ${checkout} -d ${directory} -i ${directory}/inventory/main.yaml -U ${url} site.yaml # \
 #  2>&1 | sudo tee -a ${logfile}
+
