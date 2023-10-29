@@ -17,11 +17,21 @@
     state: present
     use: apt
 
-- name: Bootstrap | Install MAAS CLI
+- name: Bootstrap | Install Terraform Cloud Agent
   ansible.builtin.unarchive:
-    dest: /usr/local/bin/
+    dest: /usr/local/bin
     remote_src: true
     src: https://releases.hashicorp.com/tfc-agent/1.13.1/tfc-agent_1.13.1_linux_amd64.zip
-    creates: /usr/local/bin/tfc-agent
-    include: tfc-agent
     mode: "755"
+
+- name: Bootstrap | Install Terraform Cloud Agent Core Service
+  ansible.builtin.copy:
+    dest: /etc/systemd/system/tfc-agent.service
+    src: files/tfc-agent.service
+    mode: "755"
+
+- name: Bootstrap | Install Terraform Cloud Agent Core Environment
+  ansible.builtin.template:
+    dest: /etc/systemd/system/tfc-agent.service.env
+    src: templates/tfc-agent.service.env.j2
+    mode: "0600"
